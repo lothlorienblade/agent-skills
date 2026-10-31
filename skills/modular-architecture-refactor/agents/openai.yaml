@@ -1,0 +1,6 @@
+interface:
+  display_name: "Modular Architecture Refactor"
+  short_description: "Refactor code into decoupled, cohesive, plugin-ready modules"
+  default_prompt: "Use $modular-architecture-refactor to diagnose this codebase and refactor it toward a modular architecture while preserving behavior."
+policy:
+  allow_implicit_invocation: true

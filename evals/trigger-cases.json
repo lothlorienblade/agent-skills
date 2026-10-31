@@ -1,0 +1,26 @@
+{
+  "skill": "modular-architecture-refactor",
+  "purpose": "Activation test prompts. Use them to check that the description triggers on architectural refactoring requests and stays silent on ordinary coding tasks. Run each prompt in a fresh agent session with the skill installed and record whether the skill was loaded.",
+  "should_trigger": [
+    "Refactor this project into a modular architecture. The main.py file has grown to 3000 lines and mixes the GUI, database access and business rules.",
+    "Our services package has circular imports everywhere. Untangle the dependencies and make them flow in one direction.",
+    "Split the OrderManager god class into cohesive components without changing behavior.",
+    "I want new export formats to be pluggable instead of editing the giant switch in ReportService every time. Restructure it.",
+    "Decouple the domain logic from Express handlers and the Postgres client so it can be unit tested.",
+    "We have the same pricing rules implemented in the TypeScript client and the Go server. Consolidate them and make sure they stay consistent.",
+    "Analyze the architecture of this repository and give me a staged plan to reduce coupling. Don't change code yet.",
+    "Global mutable state leaks between user sessions in this Flask app. Isolate state per session and per request as part of a cleanup of the architecture.",
+    "Проведи архитектурный рефакторинг проекта: раздели модули, убери циклические зависимости, сохрани поведение."
+  ],
+  "should_not_trigger": [
+    "Fix the off-by-one error in pagination.ts.",
+    "Add a dark mode toggle to the settings page.",
+    "Rename the variable usr to user in auth.py.",
+    "Write unit tests for the parseDate function.",
+    "Explain what this regular expression does.",
+    "Format the whole repository with Prettier.",
+    "Bump React to the latest version and fix the type errors.",
+    "Review this pull request for bugs.",
+    "Create a new FastAPI endpoint that returns the list of users."
+  ]
+}
