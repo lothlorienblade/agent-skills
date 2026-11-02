@@ -1,4 +1,4 @@
-name: Validate skill
+name: Validate skills
 
 on:
   push:
@@ -12,7 +12,13 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Validate against the Agent Skills specification
+      - name: Validate each skill against the Agent Skills specification
         run: |
           pip install skills-ref==0.1.1
-          agentskills validate skills/modular-architecture-refactor
+          for skill in skills/*/; do
+            echo "::group::$skill"
+            agentskills validate "$skill"
+            echo "::endgroup::"
+          done
+      - name: Check repository consistency
+        run: python scripts/check_repo.py

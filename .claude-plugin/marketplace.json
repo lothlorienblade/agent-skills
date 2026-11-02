@@ -1,0 +1,38 @@
+{
+  "name": "lothlorienblade",
+  "description": "Agent Skills by lothlorienblade for software engineering work: codebase audits and behavior-preserving architectural refactoring.",
+  "owner": {
+    "name": "lothlorienblade",
+    "url": "https://github.com/lothlorienblade"
+  },
+  "plugins": [
+    {
+      "name": "codebase-audit",
+      "description": "Read-only codebase audit that produces a prioritized, verified list of problems to fix before development continues.",
+      "version": "1.0.0",
+      "author": { "name": "lothlorienblade" },
+      "homepage": "https://github.com/lothlorienblade/agent-skills/blob/main/docs/skills/codebase-audit.md",
+      "repository": "https://github.com/lothlorienblade/agent-skills",
+      "license": "MIT",
+      "category": "development",
+      "keywords": ["audit", "code-quality", "technical-debt", "code-review", "security"],
+      "source": "./",
+      "strict": false,
+      "skills": ["./skills/codebase-audit"]
+    },
+    {
+      "name": "modular-architecture-refactor",
+      "description": "Behavior-preserving architectural refactoring toward orthogonal, loosely coupled, highly cohesive, plugin-ready modules.",
+      "version": "1.0.0",
+      "author": { "name": "lothlorienblade" },
+      "homepage": "https://github.com/lothlorienblade/agent-skills/blob/main/docs/skills/modular-architecture-refactor.md",
+      "repository": "https://github.com/lothlorienblade/agent-skills",
+      "license": "MIT",
+      "category": "development",
+      "keywords": ["architecture", "refactoring", "modularity", "coupling", "plugin-architecture"],
+      "source": "./",
+      "strict": false,
+      "skills": ["./skills/modular-architecture-refactor"]
+    }
+  ]
+}

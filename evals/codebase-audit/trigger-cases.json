@@ -1,0 +1,25 @@
+{
+  "skill": "codebase-audit",
+  "purpose": "Activation test prompts. Use them to check that the description triggers on requests for a broad, read-only audit of a project and stays silent on diff reviews, bug fixes, feature work, and architecture-only refactoring. Run each prompt in a fresh agent session with the skill installed and record whether the skill was loaded.",
+  "should_trigger": [
+    "Audit this codebase and tell me what has to be fixed before we continue development. Don't change anything yet.",
+    "We're about to start on the plugin system. Do a full health check of the project first and give me a prioritized list of problems.",
+    "What are the biggest risks in this repo before we ship 1.0? I want a ranked list with reasons and how to fix each, no code changes.",
+    "Give me a technical debt inventory for this project, ordered by priority.",
+    "I inherited this app from another team. Review the whole codebase and tell me what state it is in and what to tackle first.",
+    "Do a readiness review of src/sync before we build offline mode on top of it. Analysis only.",
+    "Проведи комплексный аудит кодовой базы и составь приоритизированный список проблем, которые нужно устранить перед продолжением разработки. Ничего не исправляй.",
+    "Найди в проекте оставшиеся существенные проблемы и предложи, в каком порядке их решать."
+  ],
+  "should_not_trigger": [
+    "Review this pull request for bugs.",
+    "Look at my staged changes and tell me if anything is wrong.",
+    "Fix the crash when the export folder doesn't exist.",
+    "Add a progress bar to the download dialog.",
+    "Refactor main.py into separate modules for the GUI, storage and business logic.",
+    "Our services package has circular imports. Untangle the dependencies without changing behavior.",
+    "Write unit tests for the parse_date function.",
+    "Explain how authentication works in this project.",
+    "Run the linter and fix all warnings."
+  ]
+}

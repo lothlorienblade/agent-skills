@@ -21,6 +21,7 @@
     "Format the whole repository with Prettier.",
     "Bump React to the latest version and fix the type errors.",
     "Review this pull request for bugs.",
-    "Create a new FastAPI endpoint that returns the list of users."
+    "Create a new FastAPI endpoint that returns the list of users.",
+    "Audit this codebase and give me a prioritized list of problems to fix before we continue. Do not change code."
   ]
 }

@@ -1,0 +1,6 @@
+interface:
+  display_name: "Codebase Audit"
+  short_description: "Read-only audit with a prioritized list of problems to fix"
+  default_prompt: "Use $codebase-audit to audit this codebase and give me a prioritized list of the significant problems to fix before we continue development. Don't change any code."
+policy:
+  allow_implicit_invocation: true
