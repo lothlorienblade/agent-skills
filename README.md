@@ -3,6 +3,7 @@
 [![Validate skills](https://github.com/lothlorienblade/agent-skills/actions/workflows/validate.yml/badge.svg)](https://github.com/lothlorienblade/agent-skills/actions/workflows/validate.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Agent Skills](https://img.shields.io/badge/Agent%20Skills-compatible-6f42c1.svg)](https://agentskills.io)
+[![skills.sh](https://img.shields.io/badge/skills.sh-lothlorienblade%2Fagent--skills-black.svg)](https://skills.sh/lothlorienblade/agent-skills)
 
 [Agent Skills](https://agentskills.io) that give AI coding agents a disciplined method for real engineering work: auditing a codebase before you build on it, and restructuring it without breaking what it does.
 
@@ -25,7 +26,7 @@ They work well together: run **Codebase Audit** to find out what matters most, t
 
 ### Any agent: skills CLI
 
-The [skills CLI](https://github.com/vercel-labs/skills) (requires Node.js) installs skills for the agents you choose.
+The [skills CLI](https://github.com/vercel-labs/skills) (requires Node.js) installs skills for the agents you choose. The collection is also listed on [skills.sh](https://skills.sh/lothlorienblade/agent-skills).
 
 ```bash
 # Interactive: choose skills, agents, and scope

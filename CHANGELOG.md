@@ -1,8 +1,8 @@
 # Changelog
 
-Changes to each skill, newest first. Versions follow [semantic versioning](https://semver.org) per skill and match `metadata.version` in its `SKILL.md`.
+Changes to each skill, newest first. Versions follow [semantic versioning](https://semver.org) per skill and match `metadata.version` in its `SKILL.md`. Repository releases (`vX.Y.Z` tags) are snapshots of the whole collection.
 
-## 2026-11-02
+## v2.0.0 — 2026-11-02
 
 ### Repository
 
@@ -18,3 +18,9 @@ Changes to each skill, newest first. Versions follow [semantic versioning](https
 ### modular-architecture-refactor 1.0.0
 
 - Added a trigger eval case that keeps general codebase audits out of this skill. The skill itself is unchanged.
+
+## v1.0.0 — 2026-10-31
+
+### modular-architecture-refactor 1.0.0
+
+- First release, published as `lothlorienblade/modular-architecture-refactor`.
