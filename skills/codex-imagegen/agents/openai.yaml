@@ -1,0 +1,6 @@
+interface:
+  display_name: "Codex Image Generation"
+  short_description: "Generate raster images through the Codex CLI on a ChatGPT plan"
+  default_prompt: "Use $codex-imagegen to generate a game sprite of a red apple, square 1:1, on a transparent background."
+policy:
+  allow_implicit_invocation: false

@@ -2,6 +2,16 @@
 
 Changes to each skill, newest first. Versions follow [semantic versioning](https://semver.org) per skill and match `metadata.version` in its `SKILL.md`. Repository releases (`vX.Y.Z` tags) are snapshots of the whole collection.
 
+## v2.1.0 — 2026-11-02
+
+### codex-imagegen 1.0.0
+
+- First release: generates raster images through the OpenAI Codex CLI's built-in image generator on a ChatGPT plan, with a helper script that runs Codex in a read-only sandbox and collects the images, prompt guidance with aspect ratios by asset type, and rules for reviewing results and spending the plan's quota.
+
+### Repository
+
+- The README describes the `scripts/` folder a skill may include, and the portability principle allows the dependencies a skill's job requires.
+
 ## v2.0.0 — 2026-11-02
 
 ### Repository

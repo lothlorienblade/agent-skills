@@ -1,0 +1,26 @@
+{
+  "skill": "codex-imagegen",
+  "purpose": "Activation test prompts. Use them to check that the description triggers on requests for new raster images and stays silent on vector graphics, code-drawn visuals, charts, plain image file processing, and the other skills in this collection. Run each prompt in a fresh agent session (not Codex) with the skill installed and record whether the skill was loaded.",
+  "should_trigger": [
+    "I need a sprite for the apple pickup in my snake game, transparent background.",
+    "Generate a main menu background for the game: a misty pine forest at dusk, it should fill a 1920x1080 screen.",
+    "Make a seamless grass texture for the ground tiles.",
+    "Create an app icon for my Electron app, a stylized fox head.",
+    "Here's the approved worm sprite in assets/worm.png. Make a matching cherry and banana in the same style.",
+    "Generate this image through ChatGPT using my Plus subscription: a cozy reading nook illustration for the landing page.",
+    "Draw some concept art for a desert level with ruined towers.",
+    "Сгенерируй картинку для экрана загрузки: космический корабль над планетой, вертикальная, для телефона.",
+    "Нарисуй спрайты еды для нового облика змейки."
+  ],
+  "should_not_trigger": [
+    "Draw an SVG logo for the project with the letters LB.",
+    "Make a bar chart of monthly downloads from stats.csv.",
+    "Write a canvas animation of falling snow for the landing page header.",
+    "Write a Godot shader that makes the water tiles shimmer.",
+    "Resize every PNG in assets/icons to 64x64 and convert them to WebP.",
+    "Build a 3D model of a wooden chair in Blender.",
+    "Fix the sprite flickering when the snake turns.",
+    "Audit this codebase and give me a prioritized list of problems to fix before we continue. Do not change code.",
+    "Refactor the rendering module so skins can be added as plugins."
+  ]
+}
