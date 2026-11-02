@@ -15,7 +15,7 @@ jobs:
       - name: Validate each skill against the Agent Skills specification
         run: |
           pip install skills-ref==0.1.1
-          for skill in skills/*/; do
+          for skill in skills/*/ .agents/skills/*/; do
             echo "::group::$skill"
             agentskills validate "$skill"
             echo "::endgroup::"

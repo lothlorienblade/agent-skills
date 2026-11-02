@@ -94,6 +94,7 @@ docs/original-prompts/           # The author's original prompts (Russian) the s
 evals/<name>/trigger-cases.json  # Activation tests for each skill
 .claude-plugin/marketplace.json  # Claude Code plugin marketplace
 scripts/check_repo.py            # Repository consistency checks, run in CI
+.agents/skills/                  # Maintainer skills for working on this repository (internal, not published)
 ```
 
 ## Contributing

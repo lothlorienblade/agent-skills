@@ -2,6 +2,13 @@
 
 Changes to each skill, newest first. Versions follow [semantic versioning](https://semver.org) per skill and match `metadata.version` in its `SKILL.md`. Repository releases (`vX.Y.Z` tags) are snapshots of the whole collection.
 
+## Unreleased
+
+### Repository
+
+- Added the maintainer skill `publish-skill` in `.agents/skills/`: the collection's publication criteria and the publishing workflow (commit, tag, CI, GitHub Release, local installs), with a script that creates GitHub Releases without the GitHub CLI. It is internal (`metadata.internal: true`) and not part of the published collection.
+- CI validates maintainer skills in `.agents/skills/` too; CONTRIBUTING describes publishing.
+
 ## v2.1.0 — 2026-11-02
 
 ### codex-imagegen 1.0.0

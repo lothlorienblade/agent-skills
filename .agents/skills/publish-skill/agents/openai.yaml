@@ -1,0 +1,6 @@
+interface:
+  display_name: "Publish Skill"
+  short_description: "Publish a skill to lothlorienblade/agent-skills"
+  default_prompt: "Use $publish-skill to bring this skill up to the collection's criteria and publish it to lothlorienblade/agent-skills."
+policy:
+  allow_implicit_invocation: true

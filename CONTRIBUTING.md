@@ -25,8 +25,18 @@ CI runs both of these on every push and pull request. Run them locally before op
 
 ```bash
 pip install skills-ref==0.1.1
-for skill in skills/*/; do agentskills validate "$skill"; done
+for skill in skills/*/ .agents/skills/*/; do agentskills validate "$skill"; done
 python scripts/check_repo.py
 ```
 
 `agentskills validate` checks each skill against the [Agent Skills specification](https://agentskills.io/specification). `check_repo.py` checks that every skill has docs, evals, a README row, and a marketplace entry with a matching version, and that relative links resolve.
+
+## Publishing (maintainers)
+
+Publication is done with the maintainer skill [`publish-skill`](.agents/skills/publish-skill/SKILL.md). It holds the full [publication criteria](.agents/skills/publish-skill/references/criteria.md) and the [publishing mechanics](.agents/skills/publish-skill/references/publishing.md): commit, tag, CI, GitHub Release, and updating local installs. Agents working in this repository pick it up from `.agents/skills/`; to use it from anywhere:
+
+```bash
+INSTALL_INTERNAL_SKILLS=1 npx skills add lothlorienblade/agent-skills --skill publish-skill -g -a claude-code codex
+```
+
+It is marked `metadata.internal: true`, so it is hidden from normal installs and is not part of the published collection. When the rules in this file change, update that skill in the same change.
