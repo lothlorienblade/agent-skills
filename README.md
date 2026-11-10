@@ -20,7 +20,7 @@ npx skills add lothlorienblade/agent-skills
 | [**Codebase Audit**](docs/skills/codebase-audit.md) | Read-only audit of a project. Finds the significant problems to fix before development continues, verifies each one, and ranks them P0–P3 with reasons and recommended fixes. | No |
 | [**Modular Architecture Refactor**](docs/skills/modular-architecture-refactor.md) | Behavior-preserving architectural refactoring toward orthogonal, loosely coupled, highly cohesive, plugin-ready modules, in small verified steps. | Yes |
 | [**Codex Image Generation**](docs/skills/codex-imagegen.md) | Generates raster images (sprites, textures, icons, backgrounds) through the OpenAI Codex CLI on a ChatGPT plan, then reviews and fits them to their purpose. | No, adds images only |
-| [**Text Distill**](docs/skills/text-distill.md) | Rewrites transcripts, recordings, essays, and chat exports into factual, structured documents (guides, notes, minutes, summaries of agreements) with no filler, keeping who said what, and reports what to verify against the source. | No, adds documents only |
+| [**Text Distill**](docs/skills/text-distill.md) | Rewrites transcripts, recordings, essays, and chat exports into factual, structured documents (guides, notes, minutes, summaries of agreements) with no filler, keeping who said what and every contact and link, and reports what to verify against the source. | No, adds documents only |
 
 They work well together: run **Codebase Audit** to find out what matters most, then **Modular Architecture Refactor** when the main problems are architectural.
 

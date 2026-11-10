@@ -134,7 +134,7 @@ Signs: "we click", "we go to", "we select"; the speaker shows an interface.
 | Task | Who | Due | Status |
 
 ## Key data
-- links, files, non-personal details, figures
+- contacts, addresses, links, files, account and order numbers, figures, exactly as given
 
 ## Open questions
 ```

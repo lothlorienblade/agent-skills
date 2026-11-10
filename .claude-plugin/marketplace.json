@@ -50,8 +50,8 @@
     },
     {
       "name": "text-distill",
-      "description": "Rewrites transcripts, recordings, essays, and chat exports into factual, structured documents with no filler, keeping who said what.",
-      "version": "2.0.0",
+      "description": "Rewrites transcripts, recordings, essays, and chat exports into factual, structured documents with no filler, keeping who said what and every contact and link.",
+      "version": "3.0.0",
       "author": { "name": "lothlorienblade" },
       "homepage": "https://github.com/lothlorienblade/agent-skills/blob/main/docs/skills/text-distill.md",
       "repository": "https://github.com/lothlorienblade/agent-skills",

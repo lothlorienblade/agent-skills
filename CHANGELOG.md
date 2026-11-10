@@ -2,6 +2,14 @@
 
 Changes to each skill, newest first. Versions follow [semantic versioning](https://semver.org) per skill and match `metadata.version` in its `SKILL.md`. Repository releases (`vX.Y.Z` tags) are snapshots of the whole collection.
 
+## v4.0.0 — 2026-11-10
+
+### text-distill 3.0.0
+
+- **Changed default:** phone numbers, addresses, emails, usernames, links, and account, contract, and order numbers stay in the document exactly as the source gives them. Version 2.0.0 removed contact data, account IDs, and links with tokens by default; now that happens only when the user asks for anonymization.
+- Passwords, access tokens, and API keys are kept too, and the report warns about them so the user can decide before sharing the document.
+- The check before saving compares contacts, addresses, and links with the source character for character.
+
 ## v3.0.0 — 2026-11-10
 
 ### text-distill 2.0.0
