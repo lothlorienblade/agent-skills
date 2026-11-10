@@ -1,0 +1,27 @@
+{
+  "skill": "text-distill",
+  "purpose": "Activation test prompts. Use them to check that the description triggers on requests to rewrite a transcript, recording, essay, or chat into a complete, impersonal, structured document without filler, and stays silent on one-line summaries, translation, style editing that keeps the author's voice, transcription itself, and code work that belongs to the other skills in this collection. Run each prompt in a fresh agent session with the skill installed and record whether the skill was loaded.",
+  "should_trigger": [
+    "Here's the transcript of a training video, transcripts/onboarding-03.txt. Strip the fluff and turn it into a proper step-by-step guide, no names, keep all the details.",
+    "Turn the recording of yesterday's Zoom call (call-2026-11-03.txt) into minutes I can send around: decisions, who does what, deadlines.",
+    "I exported our Telegram chat with the contractor to chat.txt. Pull out what we actually agreed on, what it costs, and what's still open.",
+    "This lecture transcript is 40 pages of rambling. Rewrite it as clean structured notes without losing any of the facts.",
+    "Clean up this essay into a tight thesis outline: main idea, arguments, conclusion. No fluff, but don't drop any arguments.",
+    "We interviewed three customers; the transcripts are in interviews/. Make an anonymized summary by topic for the product team.",
+    "Anonymize this support chat log and rewrite it as a knowledge base article: what the problem was and how it was solved.",
+    "Убери воду из этой расшифровки и сделай обезличенную инструкцию, максимально содержательную и последовательную.",
+    "Вот выгрузка переписки из рабочего чата, вытащи суть: о чём договорились, какие задачи и сроки.",
+    "Сделай протокол по записи созвона, файл meeting.srt лежит в папке records."
+  ],
+  "should_not_trigger": [
+    "Summarize this article in one sentence.",
+    "Translate this transcript into English.",
+    "Edit my essay for grammar and flow, but keep my voice and style.",
+    "Transcribe these MP4 files to text with Whisper.",
+    "Generate SRT subtitles for this video.",
+    "Write a README for this repository.",
+    "Audit this codebase and give me a prioritized list of problems to fix.",
+    "Refactor the chat-export parser into separate modules without changing its behavior.",
+    "Draw a cover image for my meeting notes."
+  ]
+}

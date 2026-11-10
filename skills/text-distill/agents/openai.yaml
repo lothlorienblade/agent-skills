@@ -1,0 +1,6 @@
+interface:
+  display_name: "Text Distill"
+  short_description: "Rewrite transcripts and chats into factual documents"
+  default_prompt: "Use $text-distill to turn this transcript into an impersonal, well-structured document with no filler, keeping every fact."
+policy:
+  allow_implicit_invocation: true

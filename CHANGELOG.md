@@ -2,10 +2,15 @@
 
 Changes to each skill, newest first. Versions follow [semantic versioning](https://semver.org) per skill and match `metadata.version` in its `SKILL.md`. Repository releases (`vX.Y.Z` tags) are snapshots of the whole collection.
 
-## Unreleased
+## v2.2.0 — 2026-11-10
+
+### text-distill 1.0.0
+
+- First release: rewrites transcripts, lectures, essays, interviews, meeting recordings, and chat exports into impersonal, factual, structured documents with no filler, with an output template per genre and a report of what was removed, fixed, and needs verifying against the source.
 
 ### Repository
 
+- The collection now covers work beyond code: the README intro and the marketplace description mention distilling texts.
 - Added the maintainer skill `publish-skill` in `.agents/skills/`: the collection's publication criteria and the publishing workflow (commit, tag, CI, GitHub Release, local installs), with a script that creates GitHub Releases without the GitHub CLI. It is internal (`metadata.internal: true`) and not part of the published collection.
 - CI validates maintainer skills in `.agents/skills/` too; CONTRIBUTING describes publishing.
 

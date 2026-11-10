@@ -5,7 +5,7 @@
 [![Agent Skills](https://img.shields.io/badge/Agent%20Skills-compatible-6f42c1.svg)](https://agentskills.io)
 [![skills.sh](https://img.shields.io/badge/skills.sh-lothlorienblade%2Fagent--skills-black.svg)](https://skills.sh/lothlorienblade/agent-skills)
 
-[Agent Skills](https://agentskills.io) that give AI coding agents a disciplined method for real engineering work: auditing a codebase before you build on it, restructuring it without breaking what it does, and generating the images it needs.
+[Agent Skills](https://agentskills.io) that give AI agents a disciplined method for real work: auditing a codebase before you build on it, restructuring it without breaking what it does, generating the images it needs, and distilling transcripts, recordings, and chats into documents you can act on.
 
 Each skill is a self-contained folder that works with Claude Code, OpenAI Codex, Cursor, GitHub Copilot, Gemini CLI, OpenCode, and other agents that support the Agent Skills standard.
 
@@ -20,6 +20,7 @@ npx skills add lothlorienblade/agent-skills
 | [**Codebase Audit**](docs/skills/codebase-audit.md) | Read-only audit of a project. Finds the significant problems to fix before development continues, verifies each one, and ranks them P0–P3 with reasons and recommended fixes. | No |
 | [**Modular Architecture Refactor**](docs/skills/modular-architecture-refactor.md) | Behavior-preserving architectural refactoring toward orthogonal, loosely coupled, highly cohesive, plugin-ready modules, in small verified steps. | Yes |
 | [**Codex Image Generation**](docs/skills/codex-imagegen.md) | Generates raster images (sprites, textures, icons, backgrounds) through the OpenAI Codex CLI on a ChatGPT plan, then reviews and fits them to their purpose. | No, adds images only |
+| [**Text Distill**](docs/skills/text-distill.md) | Rewrites transcripts, recordings, essays, and chat exports into impersonal, factual, structured documents (guides, notes, minutes, summaries of agreements) with no filler, and reports what to verify against the source. | No, adds documents only |
 
 They work well together: run **Codebase Audit** to find out what matters most, then **Modular Architecture Refactor** when the main problems are architectural.
 
@@ -52,6 +53,7 @@ This repository is also a Claude Code plugin marketplace. Each skill is a separa
 /plugin install codebase-audit@lothlorienblade
 /plugin install modular-architecture-refactor@lothlorienblade
 /plugin install codex-imagegen@lothlorienblade
+/plugin install text-distill@lothlorienblade
 ```
 
 Plugin skills are namespaced, so the explicit command becomes `/codebase-audit:codebase-audit`. Automatic activation works the same either way.
@@ -78,7 +80,7 @@ Every skill in this collection follows the same rules:
 - **A method, not a prompt dump.** A compact `SKILL.md` holds the workflow and the rules that matter; detail lives in `references/` and is loaded only when a step needs it.
 - **Precise activation.** Descriptions say when to use the skill and when not to, and every skill ships [trigger evals](evals) with prompts that should and should not activate it.
 - **Honest verification.** Agents record a baseline, verify their claims, and report what they could not check instead of assuming it works.
-- **Proportionate.** Depth matches the size and real problems of the project. No ceremony for a small tool.
+- **Proportionate.** Depth matches the size and real problems of the task. No ceremony for a small tool or a short text.
 - **Portable.** No runtime dependencies beyond what a skill's job requires (Codex Image Generation needs the Codex CLI and Python), no agent-specific lock-in; validated in CI against the [Agent Skills specification](https://agentskills.io/specification).
 
 ## Repository layout
