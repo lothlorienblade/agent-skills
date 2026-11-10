@@ -1,10 +1,10 @@
 ---
 name: text-distill
-description: Rewrites any text into an impersonal, factual, logically structured document with no filler. Handles video and audio transcripts, monologues, lectures, essays, interviews, dialogues, Zoom or Teams meeting recordings, and chat exports, and turns them into a step-by-step guide, lecture notes, meeting minutes, or a summary of agreements. Keeps every fact, number, condition, decision, and warning; removes greetings, repetition, personal data, and speech noise, and reports what to double-check against the source. Use when the user asks to "remove the fluff", turn a transcript into instructions or notes, clean up a rambling text, anonymize it, write minutes from a call recording, or extract what was agreed in a chat, even if they just paste a long text or point to a .txt, .srt, or .md file without naming the skill. Writes a new Markdown file and never changes the source. Do not use for a one-line summary, translation, literary editing that keeps the author's voice, or transcribing audio or video itself.
+description: Rewrites any text into a factual, logically structured document with no filler. Handles video and audio transcripts, monologues, lectures, essays, interviews, dialogues, Zoom or Teams meeting recordings, and chat exports, and turns them into a step-by-step guide, lecture notes, meeting minutes, or a summary of agreements. Keeps every fact, number, decision, and warning and who said what; removes greetings, repetition, contact data, and speech noise; anonymizes people on request; reports what to verify. Use when the user asks to "remove the fluff", turn a transcript into instructions or notes, clean up a rambling text, anonymize it, write minutes from a call recording, or extract what was agreed in a chat, even if they just paste a long text or point to a .txt, .srt, or .md file without naming the skill. Writes a new Markdown file and never changes the source. Do not use for a one-line summary, translation, literary editing that keeps the author's voice, or transcribing audio or video itself.
 license: MIT
 metadata:
   author: lothlorienblade
-  version: "1.0.0"
+  version: "2.0.0"
 ---
 
 # Text Distill
@@ -28,11 +28,13 @@ A good result is not a short retelling but a complete document of smaller size: 
 
 **Each fact once.** Repeating a point in another section is filler too. Do not restate a fact in a summary, a table, and a recommendations list. A "Key points" block belongs only in a long document (more than two screens). A "(to verify)" mark goes in one place, where the fact is written.
 
-**3. Depersonalization** (the default; keep names only if the user asks).
-- Remove names of private individuals and personal data: phone numbers, addresses, card and wallet numbers, personal amounts.
-- Replace people with roles: "curator", "new member", "project manager". If the role is unclear, use "Participant 1", "Participant 2".
+**3. People: keep who said what.**
+- In dialogues, interviews, meetings, and chats, keep the participants' names as the source gives them. Who reported, proposed, agreed to, or owns something is part of the fact, and the reader needs it to know whose information it is. Use one form of each name throughout.
+- A chat export may label its owner only as "self" or "me". Take the name from the conversation if it appears there (someone addresses them by name); otherwise keep the export's label and say so in the report.
+- A lone narrator (a tutorial, a lecture) is not a participant whose authorship matters: their self-introduction is filler, and a guide speaks impersonally.
+- Remove personal data that no reader needs: phone numbers, home addresses, card, wallet, and account numbers, account IDs, links with access tokens, passwords. Keep the fact ("sent a one-time invitation link") without the data.
 - Keep names of organizations, products, services, and interface elements: they are facts.
-- In minutes and chat summaries, who is responsible for what is a fact too. Replace names with roles, and give the role-to-name mapping only in the report, not in the document, so the user can restore it.
+- Anonymize people only when the user asks ("anonymize", "no names", "for publication"). Then replace names with roles ("curator", "designer"; "Participant 1" when no role is clear) and give the role-to-name mapping only in the report, never in the document.
 
 **4. Speech-recognition errors.** Automatic transcripts confuse similar-sounding words, mangle names, and lose punctuation. Whisper-style models also add phrases nobody said, especially at the end of a recording and in pauses: credits such as "Subtitles by …" or "Thanks for watching", "To be continued…", and their equivalents in the source's language.
 - Fix obvious errors and list them in the report.
@@ -73,7 +75,8 @@ A good result is not a short retelling but a complete document of smaller size: 
    - every statement in the document has support in the source, and guesses are marked or removed;
    - no fact is repeated across sections;
    - the numbers match the source;
-   - no personal data and no leftovers of speech remain.
+   - every statement from a conversation says whose it is;
+   - no contact data, IDs, or tokens and no leftovers of speech remain.
 
 7. **Save.**
    - Write a `.md` file next to the source or where the user said.
@@ -87,4 +90,4 @@ A good result is not a short retelling but a complete document of smaller size: 
    - what was removed (by category, not as a list of phrases);
    - which recognition errors were fixed;
    - **what to verify against the source**: contradictions, guesses, questionable advice. If a subtitle file or timestamps exist, give the time of each place;
-   - the role-to-name mapping, if people were replaced with roles.
+   - how participants without a name in the source were labeled, and the role-to-name mapping if the user asked for anonymization.

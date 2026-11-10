@@ -1,6 +1,6 @@
 {
   "skill": "text-distill",
-  "purpose": "Activation test prompts. Use them to check that the description triggers on requests to rewrite a transcript, recording, essay, or chat into a complete, impersonal, structured document without filler, and stays silent on one-line summaries, translation, style editing that keeps the author's voice, transcription itself, and code work that belongs to the other skills in this collection. Run each prompt in a fresh agent session with the skill installed and record whether the skill was loaded.",
+  "purpose": "Activation test prompts. Use them to check that the description triggers on requests to rewrite a transcript, recording, essay, or chat into a complete, structured document without filler, and stays silent on one-line summaries, translation, style editing that keeps the author's voice, transcription itself, and code work that belongs to the other skills in this collection. Run each prompt in a fresh agent session with the skill installed and record whether the skill was loaded.",
   "should_trigger": [
     "Here's the transcript of a training video, transcripts/onboarding-03.txt. Strip the fluff and turn it into a proper step-by-step guide, no names, keep all the details.",
     "Turn the recording of yesterday's Zoom call (call-2026-11-03.txt) into minutes I can send around: decisions, who does what, deadlines.",
@@ -11,7 +11,8 @@
     "Anonymize this support chat log and rewrite it as a knowledge base article: what the problem was and how it was solved.",
     "Убери воду из этой расшифровки и сделай обезличенную инструкцию, максимально содержательную и последовательную.",
     "Вот выгрузка переписки из рабочего чата, вытащи суть: о чём договорились, какие задачи и сроки.",
-    "Сделай протокол по записи созвона, файл meeting.srt лежит в папке records."
+    "Сделай протокол по записи созвона, файл meeting.srt лежит в папке records.",
+    "Вот выгрузка моей переписки с Ирой за неделю, сделай выжимку без воды, но чтобы было видно, кто что написал."
   ],
   "should_not_trigger": [
     "Summarize this article in one sentence.",

@@ -2,7 +2,13 @@
 
 Changes to each skill, newest first. Versions follow [semantic versioning](https://semver.org) per skill and match `metadata.version` in its `SKILL.md`. Repository releases (`vX.Y.Z` tags) are snapshots of the whole collection.
 
-## Unreleased
+## v3.0.0 — 2026-11-10
+
+### text-distill 2.0.0
+
+- **Changed default:** participants' names in dialogues, interviews, meetings, and chats are kept, so every fact, plan, and task shows whose it is. Version 1.0.0 replaced people with roles by default; that now happens only when the user asks for anonymization.
+- Contact data, account IDs, and links with access tokens are still removed. A lone narrator's self-introduction in a tutorial or lecture is still dropped as filler.
+- A chat export that labels its owner only as "self" uses the name from the conversation when it appears there.
 
 ### Repository
 

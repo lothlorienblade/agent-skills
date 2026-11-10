@@ -2,7 +2,7 @@
 
 [← All skills](../../README.md) · [Skill source](../../skills/text-distill/SKILL.md) · [Trigger evals](../../evals/text-distill/trigger-cases.json)
 
-Rewrites any text (a video transcript, a lecture, an essay, an interview, a meeting recording, a chat export) into an **impersonal, factual, structured document with no filler**: a step-by-step guide, notes, minutes, or a summary of agreements. Every fact stays; greetings, repetition, personal data, and speech noise go.
+Rewrites any text (a video transcript, a lecture, an essay, an interview, a meeting recording, a chat export) into a **factual, structured document with no filler**: a step-by-step guide, notes, minutes, or a summary of agreements. Every fact stays, and so does who said it; greetings, repetition, contact data, and speech noise go.
 
 ```bash
 npx skills add lothlorienblade/agent-skills --skill text-distill
@@ -17,7 +17,7 @@ Asking an agent to "clean up this transcript" usually gets a short retelling: it
 - **Nothing factual is lost.** Every number, deadline, condition, warning, and interface name is kept; the agent lists the facts first and checks them against the result.
 - **Nothing is invented.** Inferences are not written as facts: they are left out or marked "(to verify)", and the details go into the report.
 - **Filler is defined, not guessed.** Greetings, repetition, demo-only data, and incidental details are removed by a simple test: would deleting the line change anything for the reader?
-- **People become roles.** Names and personal data leave the document; the role-to-name mapping goes only to you, so minutes and task lists stay usable.
+- **You see who said what.** In conversations, meetings, and chats every fact, plan, and task stays attached to the person it came from. Contact data, account IDs, and links with access tokens are removed. Ask for anonymization and names become roles, with the mapping given only to you.
 - **Transcript noise is handled.** Recognition errors are fixed or flagged, and phrases speech-recognition models add on their own (subtitle credits, "Thanks for watching") are dropped.
 - **You know what to double-check.** The report lists contradictions, guesses, and questionable advice from the source, with timestamps when subtitles are available.
 
@@ -29,7 +29,7 @@ Asking an agent to "clean up this transcript" usually gets a short retelling: it
 4. **Builds the structure** in logical order, with numbered steps, tables for uniform data, and blockquotes for warnings.
 5. **Writes and checks** the document: every fact present, every statement supported, nothing repeated, no personal data.
 6. **Saves** a Markdown file named by its content next to the source, numbering a series of documents. The source is never changed.
-7. **Reports** what was created and removed, which recognition errors were fixed, what to verify against the source, and the role-to-name mapping.
+7. **Reports** what was created and removed, which recognition errors were fixed, what to verify against the source, and how unnamed participants were labeled.
 
 ## Usage
 
@@ -43,7 +43,7 @@ The skill activates automatically when you ask to remove the fluff from a text, 
 Example requests:
 
 ```text
-Here's the transcript of a training video, transcripts/onboarding-03.txt. Strip the fluff and turn it into a proper step-by-step guide, no names, keep all the details.
+Here's the transcript of a training video, transcripts/onboarding-03.txt. Strip the fluff and turn it into a proper step-by-step guide, keep all the details.
 ```
 
 ```text
@@ -54,7 +54,11 @@ Turn the recording of yesterday's Zoom call into minutes I can send around: deci
 I exported our chat with the contractor to chat.txt. Pull out what we agreed on, what it costs, and what's still open.
 ```
 
-To keep people's names in the document, say so in the request.
+Names of the people in a conversation are kept by default. To anonymize them, say so in the request:
+
+```text
+Anonymize this support chat and turn it into a knowledge base article: no names, just roles.
+```
 
 ## Files
 
@@ -74,4 +78,4 @@ skills/text-distill/
 
 ## Origin
 
-The skill grew from rewriting a series of tutorial-video transcripts into impersonal guides. The author's original requests are preserved in [`docs/original-prompts/text-distill.ru.md`](../original-prompts/text-distill.ru.md).
+The skill grew from rewriting a series of tutorial-video transcripts into impersonal guides. Version 2.0.0 keeps participants' names by default, after a summary of a personal chat showed that replacing both people with letters hid whose news and plans each line was. The author's original requests are preserved in [`docs/original-prompts/text-distill.ru.md`](../original-prompts/text-distill.ru.md).

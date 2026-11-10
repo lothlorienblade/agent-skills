@@ -83,10 +83,10 @@ Signs: "we click", "we go to", "we select"; the speaker shows an interface.
 ```
 # <What the conversation is about>
 
-**Participants:** roles (Interviewer, Expert; or Participant 1, Participant 2)
+**Participants:** names, with roles when known (Anna Lee, interviewer; Mark Diaz, expert)
 
 ## <Topic 1>
-- Fact or position — (role, if it matters who said it)
+- Fact or position — name of who said it
 
 ## Disagreements (if any)
 
@@ -101,7 +101,7 @@ Signs: "we click", "we go to", "we select"; the speaker shows an interface.
 ```
 # <Meeting topic>
 
-**Date:** (if known) · **Participants:** roles
+**Date:** (if known) · **Participants:** names, with roles when known
 
 ## Discussed
 ### <Item 1>
@@ -111,7 +111,7 @@ Signs: "we click", "we go to", "we select"; the speaker shows an interface.
 1. …
 
 ## Tasks
-| Task | Owner (role) | Due |
+| Task | Owner | Due |
 
 ## Open questions
 ```
@@ -125,7 +125,7 @@ Signs: "we click", "we go to", "we select"; the speaker shows an interface.
 ```
 # <Chat topic>
 
-**Period:** dates · **Participants:** roles
+**Period:** dates · **Participants:** names
 
 ## Current agreements
 - the state of things at the end of the chat
@@ -139,7 +139,7 @@ Signs: "we click", "we go to", "we select"; the speaker shows an interface.
 ## Open questions
 ```
 
-- Group by topic, not chronologically.
+- Group by topic, not chronologically, and attribute each fact, plan, or request to the person it came from.
 - When an agreement changed later, the last one wins. Mention the history only when it matters ("deadline moved from March 5 to March 12").
 - Ignore stickers, "ok", "+", "thanks", service messages, and forwards without comment.
 - Convert "tomorrow", "on Monday" into dates using the message date.
