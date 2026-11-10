@@ -4,7 +4,7 @@ description: Maintainer workflow for publishing an Agent Skill to the lothlorien
 license: MIT
 metadata:
   author: lothlorienblade
-  version: "1.0.0"
+  version: "1.0.1"
   internal: true
 ---
 

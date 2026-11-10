@@ -2,6 +2,12 @@
 
 Changes to each skill, newest first. Versions follow [semantic versioning](https://semver.org) per skill and match `metadata.version` in its `SKILL.md`. Repository releases (`vX.Y.Z` tags) are snapshots of the whole collection.
 
+## Unreleased
+
+### Repository
+
+- `publish-skill` 1.0.1: `create_release.py` retries verifying a new release for about a minute, because the public API can return 404 for a few seconds after creation, and exits with the new code 4 (`CREATED_UNVERIFIED`) instead of 1 when the release was created but did not verify in time.
+
 ## v2.2.0 — 2026-11-10
 
 ### text-distill 1.0.0

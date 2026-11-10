@@ -2,7 +2,8 @@
 
 Reads the token that Git's credential helper stores for github.com (`git credential fill`),
 never prints it, creates the release through the REST API, and verifies the result through
-the public API. Standard library only.
+the public API. A new release can take a few seconds to appear there, so verification
+retries for about a minute before giving up. Standard library only.
 
 Usage:
   python create_release.py --tag v2.1.0 --title "v2.1.0 — Codex Image Generation" --notes-file notes.md
@@ -13,6 +14,8 @@ Exit codes:
   1  any other failure
   2  precondition failed: the tag is not on GitHub, or a release for it already exists
   3  no stored GitHub token, or GitHub rejected it
+  4  the release was created, but the public API still did not show it correctly after
+     retrying; do not create it again, check the printed URL and the API a little later
 """
 
 from __future__ import annotations
@@ -22,11 +25,14 @@ import json
 import os
 import subprocess
 import sys
+import time
 import urllib.error
 import urllib.request
 from pathlib import Path
 
 API = "https://api.github.com"
+# Seconds to wait before each verification attempt; about a minute in total.
+VERIFY_DELAYS = (2, 3, 5, 10, 15, 25)
 
 
 def api(path: str, token: str | None = None, payload: dict | None = None) -> tuple[int, dict]:
@@ -58,6 +64,29 @@ def stored_token() -> str:
         if line.startswith("password="):
             return line[len("password="):]
     return ""
+
+
+def verify(repo: str, tag: str, title: str, notes: str,
+           delays: tuple[float, ...] = VERIFY_DELAYS) -> tuple[list[str], dict]:
+    """Check the release through the public API, retrying while it is not visible yet."""
+    problems: list[str] = []
+    public: dict = {}
+    for delay in delays:
+        time.sleep(delay)
+        status, public = api(f"/repos/{repo}/releases/tags/{tag}")
+        problems = []
+        if status != 200:
+            problems.append(f"public API returned HTTP {status}")
+        else:
+            if public.get("name") != title:
+                problems.append("title differs")
+            if public.get("body") != notes:
+                problems.append("notes differ")
+            if public.get("draft") or public.get("prerelease"):
+                problems.append("marked draft or prerelease")
+        if not problems:
+            break
+    return problems, public
 
 
 def main() -> int:
@@ -98,20 +127,10 @@ def main() -> int:
         print(f"FAILED: HTTP {status}: {created.get('message')} {created.get('errors', '')}")
         return 1
 
-    status, public = api(f"/repos/{args.repo}/releases/tags/{args.tag}")
-    problems = []
-    if status != 200:
-        problems.append(f"public API returned HTTP {status}")
-    else:
-        if public.get("name") != args.title:
-            problems.append("title differs")
-        if public.get("body") != notes:
-            problems.append("notes differ")
-        if public.get("draft") or public.get("prerelease"):
-            problems.append("marked draft or prerelease")
+    problems, public = verify(args.repo, args.tag, args.title, notes)
     if problems:
-        print(f"FAILED verification ({', '.join(problems)}): {created.get('html_url')}")
-        return 1
+        print(f"CREATED_UNVERIFIED ({', '.join(problems)}): {created.get('html_url')}")
+        return 4
     print(f"RELEASE: {public['html_url']} | {public['name']} | author {public['author']['login']}")
     return 0
 

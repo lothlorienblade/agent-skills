@@ -99,6 +99,8 @@ python scripts/create_release.py --tag vX.Y.Z --title "vX.Y.Z — <headline>" --
 
 The script path is relative to this skill's folder.
 
+A new release can take a few seconds to appear in the public API: when v2.2.0 was published, the API answered 404 right after creation and showed the release correctly moments later. The script therefore retries verification for about a minute. Exit code 4 (`CREATED_UNVERIFIED`) means the release was created but did not verify in time: never run the script again for that tag, because a second release cannot be created; check it yourself as in section 5.
+
 **Permission.** Reading the stored token is a credential access. Ask the user for explicit permission in chat first; some agent harnesses (Claude Code auto mode) block the access until the user has allowed it. Never extract the token in a way that shows it in the output.
 
 **Fallbacks**, if the user does not allow token access:
